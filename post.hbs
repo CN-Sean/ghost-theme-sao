@@ -1,24 +1,68 @@
 {{!< default}}
 
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
-  <article class="post-container post-container--single">
+{{> "main_header"}}
 
-    <header class="post-header">
-      <div class="post-meta">
-        <time datetime="{{date format="YYYY/MM/DD"}}" class="post-meta__date date">{{date format="YYYY/MM/DD"}}</time> &#8226; <span class="post-meta__tags tags">{{tags prefix="于 "}}</span>
-        <!--<span class="post-meta__author author"><img src="{{author.image}}" alt="profile image for {{author.name}}" class="avatar post-meta__avatar" /> by {{author.name}}</span>-->
-      </div>
-      <h1 class="post-title">{{{title}}}</h1>
-    </header>
+<main id="container" class="container" role="main">
+    <div id="content" class="content col-sm-12 col-md-8 col-lg-8">
+        <article class="{{post_class}}">
+            <header class="post-header">
+                <h1 class="post-title"><a href="{{url}}">{{title}}</a></h1>
+                <section class="post-meta">
+                    <span class="post-meta-item">
+                        <i class="fa fa-user"></i>
+                        {{author}}
+                    </span>
+                    <span class="post-meta-item">
+                        <i class="fa fa-clock-o"></i>
+                        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY-MM-DD"}}</time>
+                    </span>
+                    <span class="post-meta-item post-meta-tags">
+                        <i class="fa fa-tag"></i>
+                        {{tags}}
+                    </span>
+                    <span class="post-meta-item pull-right">
 
-    <section class="{{post_class}}">
-      {{content}}
-    </section>
+                    </span>
+                </section>
+            </header>
 
-  </article>
-  
-  {{> read-more}}
-  {{> comments}}
+            <section class="post-content">
+                {{content}}
+            </section>
 
+            <footer class="post-footer">
+                {{> "post_author"}}
+            </footer>
+        </article>
+
+        <aside class="post-nav">
+            {{#prev_post}}
+            <span class="post-nav-prev">
+                上一篇
+                <a href="{{url}}">
+                    {{title}}
+                </a>
+            </span>
+            {{/prev_post}}
+
+            {{#next_post}}
+            <span class="post-nav-next" >
+                <a href="{{url}}">
+                    {{title}}
+                </a>
+                下一篇
+            </span>
+            {{/next_post}}
+        </aside>
+
+        {{> "comments"}}
+    </div>
+    {{> sidebar}}
+</main>
 {{/post}}
