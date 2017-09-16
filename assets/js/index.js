@@ -91,26 +91,6 @@
         // tooltip config
         $('[data-rel=tooltip]').tooltip();
 
-        // fancybox config
-        $('.post-content img').addClass('fancybox');
-        $(".fancybox").attr('rel', 'gallery-group').fancybox({
-            helpers: {
-                overlay: {
-                    css: {
-                        'background': 'rgba(0, 154, 97, 0.33)'
-                    },
-                    locked: false
-                }
-            },
-            beforeShow: function() {
-                var alt = this.element.find('img').attr('alt');
-
-                this.inner.find('img').attr('alt', alt);
-
-                this.title = alt;
-            }
-        });
-
         // add archives year
         var yearArray = new Array();
         $(".archives-item").each(function() {
