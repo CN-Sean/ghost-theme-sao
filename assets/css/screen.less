@@ -294,9 +294,8 @@ h1 {
   text-indent: -3px;
 }
 h2 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   padding-bottom: 10px;
-  border-bottom: 1px solid #EBF2F6;
 }
 h3 {
   font-size: 2.4rem;
@@ -828,6 +827,15 @@ body.nav-opened .site-wrapper {
   h2 {
     font-size: 26px;
     color: rgba(61,70,77,0.95);
+    &:before {
+      content: '';
+      border-left: 4px solid @color-key;
+      border-radius: 2px 0 0 2px;
+      position: absolute;
+      left: -15px;
+      height: 40%;
+      top: 30%;
+    }
   }
   h3 {
     font-size: 22px;
