@@ -1,5 +1,9 @@
 @color-key: #0DB3A6;
 @color-selection: fadeOut(@color-key, 66%);
+@color-bg: #f5f7f9;
+
+@color-black-0: #41464b;
+
 
 /*
     0.  Normalize
@@ -256,7 +260,7 @@ html {
 body {
   height: 100%;
   max-height: 100%;
-  font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif, serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", SimSun, Heiti, sans-serif !important;
   letter-spacing: 0.01rem;
   font-size: 1.6em !important;
   line-height: 1.75em !important;
@@ -515,7 +519,7 @@ margin on the iframe, cause it breaks stuff. */
   position: relative;
   z-index: 10;
   min-height: 100%;
-  background: #F5F7F9;
+  background: @color-bg;
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
 }

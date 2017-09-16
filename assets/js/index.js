@@ -92,7 +92,7 @@
         $('[data-rel=tooltip]').tooltip();
 
         // fancybox config
-        $('.post-content a:has(img)').addClass('fancybox');
+        $('.post-content img').addClass('fancybox');
         $(".fancybox").attr('rel', 'gallery-group').fancybox({
             helpers: {
                 overlay: {
