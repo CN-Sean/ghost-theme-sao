@@ -1,6 +1,6 @@
 @color-key: #0DB3A6;
 @color-selection: fadeOut(@color-key, 66%);
-@color-bg: #f5f7f9;
+@color-bg: #fff;
 
 @color-black-0: #41464b;
 
@@ -623,10 +623,10 @@ body.nav-opened .site-wrapper {
   background: #f5f8fa;
 }
 .no-cover .page-title {
-  color: #fff;
+  color: @color-key;
 }
 .no-cover .page-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: fade(@color-key, 20%);
 }
 
 /* Add subtle load-in animation for content on the home page */
@@ -826,7 +826,7 @@ body.nav-opened .site-wrapper {
 .post-content {
   h2 {
     font-size: 26px;
-    color: rgba(61,70,77,0.95);
+    color: @color-key;
     position: relative;
     &:before {
       content: '';
@@ -984,13 +984,6 @@ body.nav-opened .site-wrapper {
 
 .post-footer .author {
   margin-right: 180px;
-}
-.post-footer h4 a {
-  color: #2e2e2e;
-  text-decoration: none;
-}
-.post-footer h4 a:hover {
-  text-decoration: underline;
 }
 
 /* Drop the share links in the space to the right.
@@ -1435,7 +1428,7 @@ body.nav-opened .site-wrapper {
   background-color: #017e66;
 }
 .tag-meta.no-cover {
-  background: #34495e;
+
 }
 .tag-meta .tag-meta-content {
   padding: 26px 20px;
@@ -1563,9 +1556,8 @@ body.nav-opened .site-wrapper {
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
 }
 .widget-profile-cover.overlay, .widget-profile-cover.no-cover {
-  background: #34495e;
   background-position: center center;
-  height: 100px;
+  height: 50px;
 }
 .widget-profile-desc {
   padding: 0px 20px;
