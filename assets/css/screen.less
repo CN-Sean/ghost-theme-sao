@@ -1550,6 +1550,9 @@ body.nav-opened .site-wrapper {
   -ms-transition: .8s;
 }
 .widget-profile-title {
+  position: relative;
+  z-index: 1;
+  display: block;
   text-align: center;
   margin: 20px 80px !important;
   font-size: 18px;
@@ -1558,12 +1561,26 @@ body.nav-opened .site-wrapper {
   padding: .2em .6em .3em;
   line-height: 1.2;
   &:before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    border: 1px solid transparent;
+    left: -7px;
+    border-width: 14px 7px;
     border-color: @color-label @color-label @color-label transparent;
-    -moz-border-right-colors: @color-label;
   }
   &:after {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    border: 1px solid transparent;
+    right: -7px;
+    border-width: 14px 7px;
     border-color: @color-label transparent @color-label @color-label;
-    -moz-border-left-colors: @color-label;
   }
 }
 
