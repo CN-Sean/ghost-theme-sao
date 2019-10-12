@@ -91,6 +91,9 @@
         // tooltip config
         $('[data-rel=tooltip]').tooltip();
 
+        //table
+        $('.post-content table').addClass('table table-border');
+
         // fancybox 3.7.5 config
         $('.post-content a:has(img)').addClass('fancybox');
         $(".fancybox").attr('data-fancybox', 'images').fancybox({
