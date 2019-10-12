@@ -91,6 +91,16 @@
         // tooltip config
         $('[data-rel=tooltip]').tooltip();
 
+        // fancybox 3.7.5 config
+        $('.post-content a:has(img)').addClass('fancybox');
+        $(".fancybox").attr('data-fancybox', 'images').fancybox({
+            selector       : '[data-fancybox="images"]',
+            loop           : true,
+            slidesToShow   : 3,
+            slidesToScroll : 3,
+            infinite       : true
+        });
+
         // add archives year
         var yearArray = new Array();
         $(".archives-item").each(function() {
